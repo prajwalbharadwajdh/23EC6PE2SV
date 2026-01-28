@@ -1,0 +1,30 @@
+class Transaction;
+  rand bit [7:0] a, b;
+  rand bit s ;
+endclass
+
+module tb;
+  logic [7:0] a, b, y;
+  logic s ;
+  mux_2x1 dut(.*);
+  
+  covergroup cg_mux;
+    cp_s : coverpoint s ;
+  endgroup
+  
+  cg_mux cg=new();
+  Transaction tr =new();
+
+  initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars;
+    repeat(20) begin
+      assert(tr.randomize());
+      a= tr.a; b= tr.b; s= tr.s ;
+      #5; cg.sample();
+      
+      if(y !== (s ? b : a)) $error(" Mismatch!" ) ;
+    end
+    $display(" Coverage=%0.2f %%", cg.get_inst_coverage());
+  end
+endmodule
