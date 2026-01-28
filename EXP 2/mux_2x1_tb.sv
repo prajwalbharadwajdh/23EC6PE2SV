@@ -1,3 +1,14 @@
+// -----------------------------------------------------------------------------
+// File        : mux_2x1_tb.sv
+// Author      : Prajwal BHaradwaj D H
+// Created     : 2026-01-22
+// Module      : tb
+// Project     : SystemVerilog and Verification (23EC6PE2SV),
+//               Faculty: Prof. Ajaykumar Devarapalli
+//
+// Description : Testbench to validate the operation of a 2x1 multiplexer by
+//               testing different input and select conditions.
+// -----------------------------------------------------------------------------
 class Transaction;
   rand bit [7:0] a, b;
   rand bit s ;
