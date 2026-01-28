@@ -1,3 +1,14 @@
+// -----------------------------------------------------------------------------
+// File        : alu.sv
+// Author      : Prajwal Bharadwaj D H (1BM23EC186)
+// Created     : 2026-01-22
+// Module      : alu
+// Project     : SystemVerilog and Verification (23EC6PE2SV),
+//               Faculty: Prof. Ajaykumar Devarapalli
+//
+// Description : ALU that executes arithmetic and logical operations based on
+//               the selected opcode.
+// ----------------------------------------------------------------------------- 
 typedef enum bit [1:0] {ADD, SUB, AND, OR} opcode_e;
 module alu(input logic [7:0] a, b, input opcode_e op, output
            logic[7:0] y);
