@@ -1,3 +1,14 @@
+// -----------------------------------------------------------------------------
+// File        : alu_tb.sv
+// Author      : Prajwal Bharadwaj D H (1BM23EC186)
+// Created     : 2026-01-22
+// Module      : tb
+// Project     : SystemVerilog and Verification (23EC6PE2SV),
+//               Faculty: Prof. Ajaykumar Devarapalli
+//
+// Description : Testbench to validate ALU functionality using random inputs and
+//               functional coverage for opcode verification.
+// ----------------------------------------------------------------------------- 
 module tb;
    logic [7:0] a, b, y;
    opcode_e op;
