@@ -1,3 +1,14 @@
+// -----------------------------------------------------------------------------
+// File        : and_gate_tb.sv
+// Author      : Prajwal Bharadwaj D H (1BM23EC186)
+// Created     : 21-01-2026
+// Module      : tb
+// Project     : SystemVerilog and Verification (23EC6PE2SV),
+//               Faculty: Prof. Ajaykumar Devarapalli
+//
+// Description : Testbench to validate the operation of a 2-input AND gate by
+//               testing all input conditions and checking the output response.
+// -----------------------------------------------------------------------------
 module tb;
   logic a, b, y;
   and_gate dut(.*); 
