@@ -1,3 +1,14 @@
+// -----------------------------------------------------------------------------
+// File        : priority_encoder_tb.sv
+// Author      : Prajwal BHaradwaj D H
+// Created     : 2026-01-22
+// Module      : tb
+// Project     : SystemVerilog and Verification (23EC6PE2SV),
+//               Faculty: Prof. Ajaykumar Devarapalli
+//
+// Description : Testbench to validate the functionality of a priority encoder
+//               by checking output responses for different input conditions.
+// -----------------------------------------------------------------------------
 module tb;
   logic [3:0] in; logic [1:0] out; logic valid;
   priority_enc dut(.*);
