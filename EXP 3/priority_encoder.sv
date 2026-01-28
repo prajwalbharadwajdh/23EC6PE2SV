@@ -1,3 +1,14 @@
+// -----------------------------------------------------------------------------
+// File        : priority_encoder.sv
+// Author      : Prajwal BHaradwaj D H
+// Created     : 2026-01-22
+// Module      : priority_enc
+// Project     : SystemVerilog and Verification (23EC6PE2SV),
+//               Faculty: Prof. Ajaykumar Devarapalli
+//
+// Description : Priority encoder that outputs the binary code of the highest
+//               priority active input.
+// -----------------------------------------------------------------------------
 module priority_enc(input logic [3:0] in, output logic [1:0]out,output logic valid);
   always_comb begin
     valid= 1;
