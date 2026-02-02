@@ -60,7 +60,7 @@ module tb_digital_clock;
         // Run long enough to see multiple rollovers
         #500;
 
-        $display("Coverage = %0.2f%%", cg.get_coverage());
+        $display("Coverage = %0.2f%%", cg_get_coverage());
 
         $finish;
     end
