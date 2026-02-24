@@ -1,7 +1,14 @@
-//====================================================
-// File: digital_clock.sv
-// Description: Digital Clock RTL (Seconds & Minutes)
-//====================================================
+// -----------------------------------------------------------------------------
+// File        : digital_clock.sv
+// Author      : Prajwal BHaradwaj D H
+// Created     : 2026-02-24
+// Module      : digital_clock
+// Project     : SystemVerilog and Verification (23EC6PE2SV),
+//               Faculty: Prof. Ajaykumar Devarapalli
+//
+// Description : clock consists of two synchronized 6-bit counters representing 
+//               seconds and minutes, each counting from 0 to 59. 
+// -----------------------------------------------------------------------------
 
 module digital_clock (
     input  logic        clk,
