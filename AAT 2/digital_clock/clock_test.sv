@@ -11,37 +11,45 @@ program clock_test(clock_interface.TB intf);
 
     covergroup cg @(posedge intf.clk);
 
-        seconds_cp : coverpoint intf.seconds {
-            bins sec_vals[] = {[0:59]};
-            bins sec_rollover = (59 => 0);
-        }
+    seconds_val : coverpoint intf.seconds {
+        bins sec_vals[] = {[0:59]};
+    }
 
-        minutes_cp : coverpoint intf.minutes {
-            bins min_vals[] = {[0:59]};
-            bins min_rollover = (59 => 0);
-        }
+    minutes_val : coverpoint intf.minutes {
+        bins min_vals[] = {[0:59]};
+    }
 
-        cross seconds_cp, minutes_cp;
+    seconds_trans : coverpoint intf.seconds {
+        bins sec_rollover = (59 => 0);
+    }
+
+    minutes_trans : coverpoint intf.minutes {
+        bins min_rollover = (59 => 0);
+    }
+
+    cross seconds_val, minutes_val;
 
     endgroup
 
     cg coverage = new();
 
     property sec_limit;
-        @(posedge intf.clk)
-        intf.seconds <= 6'd59;
+    @(posedge intf.clk)
+    disable iff (intf.reset)
+    intf.seconds inside {[0:59]};
     endproperty
 
     property min_limit;
-        @(posedge intf.clk)
-        intf.minutes <= 6'd59;
+    @(posedge intf.clk)
+    disable iff (intf.reset)
+    intf.minutes inside {[0:59]};
     endproperty
 
     assert property(sec_limit)
-      else $error("Error : Seconds exceeded 59!");
+    else $error("Seconds exceeded 59!");
 
     assert property(min_limit)
-      else $error("Error : Minutes exceeded 59!");
+    else $error("Minutes exceeded 59!");
 
     initial begin
 
