@@ -1,5 +1,13 @@
-
-interface digital_clock_interface (input logic clk);
+// -----------------------------------------------------------------------------
+// File        : clock_interface.sv
+// Author      : Prajwal Bharadwaj D H (1BM23EC186)
+// Created     : 2026-02-24
+// Module      : clock_interface
+// Project     : SystemVerilog and Verification (23EC6PE2SV),
+//               Faculty: Prof. Ajaykumar Devarapalli
+// Description : Digital clock that tracks time using counters.
+// -----------------------------------------------------------------------------
+interface clock_interface (input logic clk);
 
     logic reset;
     logic [5:0] seconds;
