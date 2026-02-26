@@ -16,7 +16,6 @@ module digital_clock (
     output logic [5:0]  seconds,
     output logic [5:0]  minutes
 );
-
     always_ff @(posedge clk) begin
         if (reset) begin
             seconds <= 6'd0;
@@ -36,5 +35,4 @@ module digital_clock (
             end
         end
     end
-
 endmodule
